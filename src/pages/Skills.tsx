@@ -1,65 +1,60 @@
+import { Code2, Bot, Layers } from 'lucide-react';
 import { SectionWrapper, AnimatedItem } from '../components/shared';
 
-const Skills = () => {
-  const skillGroups = [
-    {
-      title: 'Technical Skills:',
-      skills: ['HTML & CSS', 'Node.js', 'JavaScript', 'React', 'Python', 'Supabase', 'REST APIs'],
-    },
-    {
-      title: 'AI Tools:',
-      skills: ['Google AI Studio', 'NotebookLM', 'HeyGen', 'LLM API integration', 'Prompt Engineering', 'LLMs', 'AI Code assistants'],
-    },
-    {
-      title: 'Soft and Evaluation Skills:',
-      skills: [
-        'Systems Architecture Design',
-        'Database Schema Design',
-        'UI/UX Design',
-        'User Flow Mapping',
-        'Wireframing (Figma)',
-        'Mind Mapping (MindManager)',
-        'System Diagramming (Lucidchart, Draw.io, Excalidraw)',
-      ],
-    },
-  ];
+const skillGroups = [
+  {
+    title: 'Technical',
+    icon: Code2,
+    skills: ['HTML & CSS', 'JavaScript', 'TypeScript', 'React', 'Node.js', 'Python', 'Supabase', 'REST APIs'],
+  },
+  {
+    title: 'AI & Tools',
+    icon: Bot,
+    skills: ['Google AI Studio', 'NotebookLM', 'HeyGen', 'LLM API Integration', 'Prompt Engineering', 'LLMs', 'AI Code Assistants'],
+  },
+  {
+    title: 'Design & Systems',
+    icon: Layers,
+    skills: ['Systems Architecture', 'Database Schema', 'UI/UX Design', 'User Flow Mapping', 'Wireframing (Figma)', 'Mind Mapping', 'System Diagramming'],
+  },
+];
 
-  return (
-    <SectionWrapper id="skills">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-        <div className="space-y-12">
-          {skillGroups.slice(0, 2).map((group, i) => (
-            <div key={i} className="space-y-6">
-              <AnimatedItem>
-                <h3 className="text-4xl font-bold uppercase tracking-tight">{group.title}</h3>
-              </AnimatedItem>
-              <ul className="space-y-2">
+const Skills = () => (
+  <SectionWrapper id="skills">
+    <AnimatedItem>
+      <h2 className="text-4xl font-bold mb-8 text-[#fae2be]">Skills</h2>
+    </AnimatedItem>
+    <AnimatedItem>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {skillGroups.map((group, i) => {
+          const Icon = group.icon;
+          return (
+            <div
+              key={i}
+              className={`bg-brand-dark/30 border border-white/10 rounded-2xl p-5 space-y-4 ${
+                i === skillGroups.length - 1 ? 'md:col-span-1' : ''
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <Icon className="w-4 h-4 text-brand-accent" />
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-accent">{group.title}</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill, j) => (
-                  <AnimatedItem key={j} className="text-lg opacity-80 flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 bg-brand-accent rounded-full" />
+                  <span
+                    key={j}
+                    className="text-xs font-medium px-3 py-1.5 rounded-lg border border-[#677ad9]/40 bg-[#677ad9]/15 text-[#677ad9]"
+                  >
                     {skill}
-                  </AnimatedItem>
+                  </span>
                 ))}
-              </ul>
+              </div>
             </div>
-          ))}
-        </div>
-        <div className="space-y-6">
-          <AnimatedItem>
-            <h3 className="text-4xl font-bold uppercase tracking-tight">{skillGroups[2].title}</h3>
-          </AnimatedItem>
-          <ul className="space-y-2">
-            {skillGroups[2].skills.map((skill, j) => (
-              <AnimatedItem key={j} className="text-lg opacity-80 flex items-center gap-3">
-                <span className="w-1.5 h-1.5 bg-brand-accent rounded-full" />
-                {skill}
-              </AnimatedItem>
-            ))}
-          </ul>
-        </div>
+          );
+        })}
       </div>
-    </SectionWrapper>
-  );
-};
+    </AnimatedItem>
+  </SectionWrapper>
+);
 
 export default Skills;

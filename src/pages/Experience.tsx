@@ -30,6 +30,7 @@ const Experience = () => {
         'Crawled and compiled datasets for AI development',
         'Researched existing AI tools such as OpenClaws & LLMs for internal integration and workflow optimization',
       ],
+      images: ['/assets/job/LW1.jpeg', '/assets/job/LW2.jpeg', '/assets/job/LW3.jpeg'],
     },
     {
       title: 'Game Boosting Specialist (Freelance)',
