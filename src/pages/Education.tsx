@@ -10,7 +10,7 @@ const Education = () => {
         { name: 'Saint Dominic Savio International School', years: '2015-2016' },
       ],
       achievements: ['Poem writing winner', 'Won multiple art related contests'],
-      images: [] as string[],
+      images: ['/assets/education/elem1.jpg', '/assets/education/elem2.jpg'] as string[],
     },
     {
       level: 'Junior High School',
@@ -32,7 +32,7 @@ const Education = () => {
       course: 'Bachelor of Science in Information Technology',
       schools: [{ name: 'University of Cebu, Lapu-Lapu and Mandaue', years: '2022-2026' }],
       achievements: ["Dean's Lister", 'Cisco certifications', 'PHP and DB tutorials, and ICT congress programs attendee', 'Top 10 Capstone Projects'],
-      images: ['/assets/education/college1.jpeg', '/assets/education/college2.jpeg'],
+      images: ['/assets/education/collegefront.jpg', '/assets/education/college1.jpeg'],
     },
   ];
 

@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 
 export const pageVariants = {
-  initial: { opacity: 0, x: 100, skewX: -5 },
+  initial: { opacity: 0, x: 60 },
   animate: {
-    opacity: 1, x: 0, skewX: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const, staggerChildren: 0.1, delayChildren: 0.2 },
+    opacity: 1, x: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const, staggerChildren: 0.1, delayChildren: 0.2 },
   },
   exit: {
-    opacity: 0, x: -100, skewX: 5,
-    transition: { duration: 0.5, ease: [0.7, 0, 0.84, 0] as const },
+    opacity: 0, x: -60,
+    transition: { duration: 0.3, ease: [0.7, 0, 0.84, 0] as const },
   },
 };
 

@@ -15,12 +15,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
   }
 
   body {
     @apply bg-brand-deep text-brand-cream font-sans antialiased;
     overflow-x: hidden;
-    scrollbar-gutter: stable;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
   }

@@ -19,7 +19,7 @@ const Experience = () => {
         'Operated the cash register, processed payments, and handled daily cash reconciliation',
         'Managed inventory tracking and restocking of supplies to ensure smooth daily operations',
       ],
-      images: ['/assets/job/hola.jpg', '/assets/job/hola3.jpg'],
+      images: ['/assets/job/hola.jpg', '/assets/job/hola2.jpg'],
     },
     {
       title: 'Website Developer intern at Lifewood Data Technology',

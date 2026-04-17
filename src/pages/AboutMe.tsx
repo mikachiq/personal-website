@@ -14,10 +14,6 @@ const AboutMe = () => {
     { label: 'I go to the gym 5x a week', image: '/assets/gym.jpg', position: 'center 55%' },
     { label: 'I have a collection of figurines', image: '/assets/collection.jpg' },
     { label: 'I love animals', image: '/assets/cats.jpeg' },
-    { label: 'Gacha Game Enthusiast' },
-    { label: 'Automation Wizard' },
-    { label: 'System Architect' },
-    { label: 'Frontend Lover' },
   ];
 
   const duplicatedFacts = [...funFacts, ...funFacts, ...funFacts];
