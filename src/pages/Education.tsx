@@ -1,0 +1,79 @@
+import { GraduationCap } from 'lucide-react';
+import { SectionWrapper, AnimatedItem, EduImageCarousel } from '../components/shared';
+
+const Education = () => {
+  const education = [
+    {
+      level: 'Elementary',
+      schools: [
+        { name: 'Saint Alphonsus Catholic School', years: '2010-2015' },
+        { name: 'Saint Dominic Savio International School', years: '2015-2016' },
+      ],
+      achievements: ['Poem writing winner', 'Won multiple art related contests'],
+      images: [] as string[],
+    },
+    {
+      level: 'Junior High School',
+      track: 'Human and Computer Interaction',
+      schools: [{ name: 'Saint Dominic Savio International School', years: '2016-2020' }],
+      achievements: ['With Honors', 'Journalism club president', 'Impromptu Speech champion', 'Leadership training'],
+      images: [] as string[],
+    },
+    {
+      level: 'Senior High School',
+      track: 'STEM',
+      schools: [{ name: 'Saint Dominic Savio International School', years: '2020-2022' }],
+      achievements: ['With Honors', 'Best in General Chemistry, Statistics & Probability, and PerDev', 'Top 5 STEM graduate', 'Math tutor as my immersion'],
+      images: ['/assets/education/SHS1.jpg', '/assets/education/SHS2.jpg', '/assets/education/SHS3.jpg'],
+      positions: ['center 15%', 'center', 'center'],
+    },
+    {
+      level: 'College',
+      course: 'Bachelor of Science in Information Technology',
+      schools: [{ name: 'University of Cebu, Lapu-Lapu and Mandaue', years: '2022-2026' }],
+      achievements: ["Dean's Lister", 'Cisco certifications', 'PHP and DB tutorials, and ICT congress programs attendee', 'Top 10 Capstone Projects'],
+      images: ['/assets/education/college1.jpeg', '/assets/education/college2.jpeg'],
+    },
+  ];
+
+  return (
+    <SectionWrapper id="education">
+      <div className="space-y-12">
+        {education.map((edu, i) => (
+          <AnimatedItem key={i} className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+            {edu.images.length > 0
+              ? <EduImageCarousel images={edu.images} level={edu.level} positions={(edu as any).positions} />
+              : <div className="aspect-square bg-brand-dark/30 rounded-3xl border border-white/5 flex items-center justify-center">
+                  <GraduationCap className="w-16 h-16 text-brand-accent opacity-40" />
+                </div>
+            }
+            <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <h3 className="text-3xl font-bold">{edu.level}</h3>
+                {(edu as any).track && <p className="text-xs font-bold opacity-60">Track: {(edu as any).track}</p>}
+                {(edu as any).course && <p className="text-xs font-bold opacity-60">Course: {(edu as any).course}</p>}
+                <ul className="space-y-1 mt-4">
+                  {edu.achievements.map((ach, j) => (
+                    <li key={j} className="text-sm opacity-80 flex items-start gap-2">
+                      <span className="text-brand-accent mt-1">›</span>
+                      {ach}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="text-right md:text-left space-y-2">
+                {edu.schools.map((school, j) => (
+                  <div key={j} className="space-y-1">
+                    <p className="font-bold text-sm">{school.name} ({school.years})</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimatedItem>
+        ))}
+      </div>
+    </SectionWrapper>
+  );
+};
+
+export default Education;
