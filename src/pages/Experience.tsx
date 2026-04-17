@@ -4,24 +4,6 @@ import { SectionWrapper, AnimatedItem, EduImageCarousel } from '../components/sh
 const Experience = () => {
   const experiences = [
     {
-      title: 'Game Tester at Railings University / PIF Nation',
-      period: 'July 2022 - September 2022',
-      bullets: [
-        'Identified and reported bugs in pre-release games, improving user experience',
-        'Collaborated with teams to suggest enhancements and ensure game quality',
-      ],
-    },
-    {
-      title: 'Barista at Hola Coffe, Southern Belle Bars',
-      period: 'August 2025 - October 2025',
-      bullets: [
-        'Prepared and served specialty coffee, espresso drinks, and other beverages to customers',
-        'Operated the cash register, processed payments, and handled daily cash reconciliation',
-        'Managed inventory tracking and restocking of supplies to ensure smooth daily operations',
-      ],
-      images: ['/assets/job/hola.jpg', '/assets/job/hola2.jpg'],
-    },
-    {
       title: 'Website Developer intern at Lifewood Data Technology',
       period: 'January 2026 - May 2026 (540 hours)',
       bullets: [
@@ -43,12 +25,30 @@ const Experience = () => {
         'Provided real-time progress updates to keep clients informed throughout each task',
       ],
     },
+    {
+      title: 'Barista at Hola Coffee, Southern Belle Bars',
+      period: 'August 2025 - October 2025',
+      bullets: [
+        'Prepared and served specialty coffee, espresso drinks, and other beverages to customers',
+        'Operated the cash register, processed payments, and handled daily cash reconciliation',
+        'Managed inventory tracking and restocking of supplies to ensure smooth daily operations',
+      ],
+      images: ['/assets/job/hola.jpg', '/assets/job/hola2.jpg'],
+    },
+    {
+      title: 'Game Tester at Railings University / PIF Nation',
+      period: 'July 2022 - September 2022',
+      bullets: [
+        'Identified and reported bugs in pre-release games, improving user experience',
+        'Collaborated with teams to suggest enhancements and ensure game quality',
+      ],
+    },
   ];
 
   return (
     <SectionWrapper id="experience">
       <AnimatedItem>
-        <h2 className="text-4xl font-bold text-right mb-12 uppercase tracking-tighter">Job Experience Across All Fields</h2>
+        <h2 className="text-section-title text-right mb-12 uppercase text-brand-cream">Job Experience Across All Fields</h2>
       </AnimatedItem>
       <div className="space-y-12">
         {experiences.map((exp, i) => (
@@ -61,12 +61,12 @@ const Experience = () => {
             }
             <div className="md:col-span-3 space-y-4">
               <div className="space-y-1">
-                <h3 className="text-2xl font-bold">{exp.title}</h3>
-                <p className="italic text-sm opacity-60 font-medium">{exp.period}</p>
+                <h3 className="text-card-title text-brand-cream">{exp.title}</h3>
+                <p className="italic text-meta text-brand-muted">{exp.period}</p>
               </div>
               <ul className="space-y-2">
                 {exp.bullets.map((bullet, j) => (
-                  <li key={j} className="text-sm opacity-80 flex items-start gap-2">
+                  <li key={j} className="text-body text-brand-gray/90 flex items-start gap-2">
                     <span className="text-brand-accent mt-1">•</span>
                     {bullet}
                   </li>

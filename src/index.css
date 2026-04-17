@@ -1,14 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
+  /* Color palette — typographic hierarchy
+   * brand-cream    → hero titles, names, card captions
+   * brand-gray     → body text, long-form paragraphs
+   * brand-muted    → small labels, subtitles, metadata (uppercase + tracking-wider)
+   * brand-accent   → pills, links, bullet dots, interactive elements
+   * brand-deep / brand-dark / brand-surface → backgrounds and lifted surfaces
+   */
   --color-brand-deep: #123962;
-  --color-brand-accent: #677ad9;
-  --color-brand-dark: #38384f;
+  --color-brand-dark: #0a2340;
+  --color-brand-surface: #1e4578;
   --color-brand-cream: #fae2be;
+  --color-brand-gray: #D9D9D9;
+  --color-brand-muted: #8a9fc9;
+  --color-brand-accent: #9bb0f0;
   --color-brand-brown: #3b2416;
 }
 
@@ -53,4 +63,74 @@
 
 .btn-accent-blob {
   @apply absolute -right-4 -bottom-4 w-32 h-32 bg-brand-accent rounded-full blur-2xl opacity-50 pointer-events-none;
+}
+
+@layer utilities {
+  .text-display {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+  }
+
+  .text-section-title {
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+
+  .text-card-title {
+    font-size: 1.5rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  .text-body-lg {
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  .text-body {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .text-body-sm {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+  }
+
+  .text-action {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .text-control {
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .text-meta {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  .text-label {
+    font-size: 0.75rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .text-chip {
+    font-size: 0.8125rem;
+    line-height: 1.2;
+    font-weight: 500;
+  }
 }

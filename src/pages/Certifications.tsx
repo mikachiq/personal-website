@@ -34,7 +34,7 @@ const Certifications = () => {
                 <img src={cert.src} alt={cert.title} className="w-full h-full object-contain bg-[#D9D9D9]" />
               </div>
             </div>
-            <p className="text-sm opacity-80 leading-relaxed font-medium">{cert.text}</p>
+            <p className="text-body text-brand-gray/90">{cert.text}</p>
           </AnimatedItem>
         ))}
       </div>

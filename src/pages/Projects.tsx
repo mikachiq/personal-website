@@ -3,8 +3,8 @@ import { SectionWrapper, AnimatedItem } from '../components/shared';
 
 const projects = [
   {
-    title: 'EDUMATCH: ML-based Recommendation System for Tertiary School Selection',
-    role: 'Project Manager',
+    title: 'EDUMATCH: A Machine Learning-Based Recommendation System for Tertiary School Selection',
+    role: 'Project Manager | Systems Architect and Designer',
     type: 'Capstone Project',
     stack: ['Python', 'Machine Learning', 'React', 'Supabase', 'REST API'],
     highlights: [
@@ -19,7 +19,7 @@ const projects = [
     title: 'Lifewood Website Imitation',
     role: 'Lead & Fullstack Dev',
     type: 'Internship Project',
-    stack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Tailwind'],
+    stack: ['React', 'TypeScript', 'Node.js', 'Express', 'Supabase', 'Tailwind'],
     highlights: [
       '3 admin role tiers',
       'HR automation system',
@@ -38,30 +38,30 @@ const Projects = () => (
         <AnimatedItem key={i}>
           <div className="glass-card p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left: metadata */}
-            <div className="space-y-5 border-r border-[#38384f] pr-6">
+            <div className="space-y-5 border-r border-brand-muted/20 pr-6">
               <div className="space-y-0.5">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#677ad9]">Role</p>
-                <p className="text-[#D9D9D9] font-bold text-sm">{project.role}</p>
+                <p className="text-label text-brand-muted">Role</p>
+                <p className="text-body-sm font-bold text-brand-cream">{project.role}</p>
               </div>
               <div className="space-y-0.5">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#677ad9]">Type</p>
-                <p className="text-[#D9D9D9] font-bold text-sm">{project.type}</p>
+                <p className="text-label text-brand-muted">Type</p>
+                <p className="text-body-sm font-bold text-brand-cream">{project.type}</p>
               </div>
               <div className="space-y-2">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#677ad9]">Stack</p>
+                <p className="text-label text-brand-muted">Stack</p>
                 <div className="flex flex-wrap gap-1.5">
                   {project.stack.map((tech, j) => (
-                    <span key={j} className="text-[#677ad9] text-[11px] font-semibold px-2.5 py-1 rounded-full border border-[#677ad9]/40 bg-[#677ad9]/15">
+                    <span key={j} className="text-brand-accent text-chip px-2.5 py-1 rounded-full border border-brand-accent/30 bg-brand-accent/12">
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
               <div className="space-y-2">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#677ad9]">Highlights</p>
+                <p className="text-label text-brand-muted">Highlights</p>
                 <ul className="space-y-1.5">
                   {project.highlights.map((h, j) => (
-                    <li key={j} className="text-sm text-[#D9D9D9]/85 flex items-start gap-2">
+                    <li key={j} className="text-body text-brand-gray/85 flex items-start gap-2">
                       <span className="text-brand-accent mt-0.5">•</span>
                       {h}
                     </li>
@@ -73,7 +73,7 @@ const Projects = () => (
                   href={project.visitSite}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-[#677ad9] px-3 py-2 rounded-lg border border-[#677ad9]/40 bg-[#677ad9]/15 hover:bg-[#677ad9]/25 transition-colors"
+                  className="inline-flex items-center gap-2 text-action text-brand-accent px-3 py-2 rounded-lg border border-brand-accent/30 bg-brand-accent/12 hover:bg-brand-accent/20 transition-colors"
                 >
                   <img src="/assets/vercel.png" alt="Vercel" className="w-3 h-3 object-contain invert" />
                   Visit site
@@ -84,9 +84,8 @@ const Projects = () => (
 
             {/* Right: description */}
             <div className="md:col-span-2 space-y-3">
-              <h3 className="text-2xl font-extrabold text-brand-cream leading-tight">{project.title}</h3>
-              <p className="italic text-sm text-[#677ad9] font-medium">{project.type} · {project.role}</p>
-              <p className="text-sm text-[#D9D9D9]/80 leading-relaxed">{project.description}</p>
+              <h3 className="text-card-title text-brand-cream">{project.title}</h3>
+              <p className="text-body text-brand-gray/80">{project.description}</p>
             </div>
           </div>
         </AnimatedItem>

@@ -30,7 +30,7 @@ export default function App() {
         <Navbar activeSection={activeSection} onSectionChange={setActiveSection} />
       )}
 
-      <main className="relative">
+      <main className="relative text-body">
         <AnimatePresence mode="wait">
           {activeSection === 'home' && <LandingPage key="home" onNext={() => setActiveSection('about')} />}
           {activeSection === 'about' && <AboutMe key="about" />}

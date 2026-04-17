@@ -20,10 +20,10 @@ const skillGroups = [
 ];
 
 const Skills = () => (
-  <SectionWrapper id="skills">
-    <AnimatedItem>
-      <h2 className="text-4xl font-bold mb-8 text-[#fae2be]">Skills</h2>
-    </AnimatedItem>
+    <SectionWrapper id="skills">
+      <AnimatedItem>
+      <h2 className="text-section-title mb-8 text-brand-cream">Skills</h2>
+      </AnimatedItem>
     <AnimatedItem>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {skillGroups.map((group, i) => {
@@ -37,13 +37,13 @@ const Skills = () => (
             >
               <div className="flex items-center gap-2">
                 <Icon className="w-4 h-4 text-brand-accent" />
-                <span className="text-xs font-bold uppercase tracking-widest text-brand-accent">{group.title}</span>
+                <span className="text-label text-brand-muted">{group.title}</span>
               </div>
               <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill, j) => (
                   <span
                     key={j}
-                    className="text-xs font-medium px-3 py-1.5 rounded-lg border border-[#677ad9]/40 bg-[#677ad9]/15 text-[#677ad9]"
+                    className="text-chip px-3 py-1.5 rounded-lg border border-brand-accent/30 bg-brand-accent/12 text-brand-accent"
                   >
                     {skill}
                   </span>
