@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-deep: #123962;
+  --color-brand-accent: #677ad9;
+  --color-brand-dark: #38384f;
+  --color-brand-cream: #fae2be;
+  --color-brand-brown: #3b2416;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-deep text-brand-cream font-sans antialiased;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-deep;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-accent/30 rounded-full border-4 border-brand-deep hover:bg-brand-accent/50 transition-colors;
+  }
+}
+
+.glass-card {
+  @apply bg-brand-dark/40 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl;
+}
+
+.nav-pill {
+  @apply bg-brand-accent/20 backdrop-blur-lg border border-white/10 rounded-full px-6 py-2 transition-all duration-300 hover:bg-brand-accent/40;
+}
+
+.btn-primary {
+  @apply bg-brand-dark hover:bg-brand-dark/80 text-brand-cream px-8 py-4 rounded-2xl flex items-center gap-3 transition-all duration-300 shadow-lg relative overflow-hidden;
+}
+
+.btn-accent-blob {
+  @apply absolute -right-4 -bottom-4 w-32 h-32 bg-brand-accent rounded-full blur-2xl opacity-50 pointer-events-none;
+}
