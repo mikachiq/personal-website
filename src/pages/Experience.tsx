@@ -23,7 +23,11 @@ const Experience = () => {
         'Maintained clear and consistent communication with clients from start to delivery',
         'Ensured strict confidentiality of client account credentials, in-game currency, and inventory',
         'Provided real-time progress updates to keep clients informed throughout each task',
+        <span key="facebook-link">
+          Check out my Facebook page for this service: <a href="https://www.facebook.com/photo/?fbid=270408562627762&set=a.145131195155500" target="_blank" rel="noreferrer" className="text-brand-accent underline">Facebook</a>
+        </span>,
       ],
+      images: ['/assets/job/pilot1.jfif', '/assets/job/pilot2.jpg'],
     },
     {
       title: 'Barista at Hola Coffee, Southern Belle Bars',

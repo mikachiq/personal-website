@@ -8,7 +8,7 @@ const Education = () => {
       course: 'Bachelor of Science in Information Technology',
       schools: [{ name: 'University of Cebu, Lapu-Lapu and Mandaue', years: '2022-2026' }],
       achievements: ["Dean's Lister (2022-2026)", 'Cisco certifications', 'Tech Talks and ICT congress programs attendee', 'Part in the Top 10 Capstone Projects in our batch', 'PSITS Treaurer (2023)'],
-      images: ['/assets/education/collegefront.jpg', '/assets/education/college1.jpeg'],
+      images: ['/assets/education/collegefront.jpg', '/assets/education/college1.jpeg', '/assets/education/college2.jpeg', '/assets/education/college3.jpeg','/assets/education/college4.jpg', '/assets/education/college5.jpg', '/assets/education/college6.jpg'] as string[],
     },
     {
       level: 'Senior High School',
