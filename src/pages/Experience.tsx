@@ -28,6 +28,7 @@ const Experience = () => {
         </span>,
       ],
       images: ['/assets/job/pilot1.jfif', '/assets/job/pilot2.jpg'],
+      positions: ['120% center', '75% center'],
     },
     {
       title: 'Barista at Hola Coffee, Southern Belle Bars',
@@ -45,7 +46,9 @@ const Experience = () => {
       bullets: [
         'Identified and reported bugs in pre-release games, improving user experience',
         'Collaborated with teams to suggest enhancements and ensure game quality',
+        'Made 10-minute video compilations on bug findings, gameplay feedback, and improvement suggestions for the development team',
       ],
+      images: ['/assets/job/tester1.jfif'],
     },
   ];
 
@@ -58,7 +61,7 @@ const Experience = () => {
         {experiences.map((exp, i) => (
           <AnimatedItem key={i} className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {(exp as any).images?.length
-              ? <EduImageCarousel images={(exp as any).images} level={exp.title} />
+              ? <EduImageCarousel images={(exp as any).images} level={exp.title} positions={(exp as any).positions} />
               : <div className="aspect-square bg-brand-dark/30 rounded-3xl border border-white/5 flex items-center justify-center">
                   <Briefcase className="w-16 h-16 text-brand-accent opacity-40" />
                 </div>

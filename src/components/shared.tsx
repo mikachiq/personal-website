@@ -55,10 +55,10 @@ export const EduImageCarousel = ({ images, level, positions }: { images: string[
           src={images[idx]}
           alt={level}
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: positions?.[idx] ?? 'right center' }}
-          initial={{ x: direction * 28 + 10, opacity: 0.6 }}
-          animate={{ x: 10, opacity: 1 }}
-          exit={{ x: direction * -28 + 10, opacity: 0, scale: 0.99 }}
+          style={{ objectPosition: positions?.[idx] ?? 'center center' }}
+          initial={{ x: direction * 28, opacity: 0.6 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: direction * -28, opacity: 0, scale: 0.99 }}
           transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] as const }}
         />
       </AnimatePresence>
