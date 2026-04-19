@@ -23,7 +23,7 @@ const Education = () => {
       track: 'Human and Computer Interaction',
       schools: [{ name: 'Saint Dominic Savio International School', years: '2016-2020' }],
       achievements: ['With Honors (2016-2020)', 'Journalism club president', 'Impromptu Speech champion', 'Leadership training (2016-2020)', 'Won and placed in multiple sports-related competitions'],
-      images: ['/assets/education/JHS1.jpg','/assets/education/JHS2.jpg','/assets/education/JHS3.jpg','/assets/education/JS4.jpg'] as string[],
+      images: ['/assets/education/JHS1.jfif', '/assets/education/JHS2.jfif', '/assets/education/JHS3.jfif', '/assets/education/JHS4.jfif'] as string[],
     },
     {
       level: 'Elementary',
