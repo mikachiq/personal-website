@@ -180,7 +180,7 @@ const Resume = () => (
         <div className="space-y-4 lg:sticky lg:top-32">
           <div className="glass-card p-5 space-y-5">
             <span className="text-chip px-2.5 py-1 rounded-full border border-brand-accent/30 bg-brand-accent/12 text-brand-accent inline-block">
-              Updated April 2026
+              Updated as of April 2026
             </span>
 
             <div className="space-y-1">
