@@ -27,7 +27,6 @@ const Skills = () => (
   <SectionWrapper
     id="skills"
     className="pt-14 md:pt-20"
-    style={{ minHeight: 'calc(100svh - var(--nav-height, 56px))' }}
   >
     <AnimatedItem className="mb-10">
       <span className="text-label text-brand-muted tracking-wider mb-4 block">What I work with daily</span>

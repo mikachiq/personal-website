@@ -9,8 +9,7 @@ const LandingPage = ({ onNext }: HomeProps) => (
     initial="initial"
     animate="animate"
     exit="exit"
-    className="hero-page flex flex-col justify-start items-center md:items-start gap-6 md:gap-8 px-4 sm:px-6 max-w-7xl mx-auto text-center md:text-left pt-14 sm:pt-16 md:pt-24 pb-8 md:pb-12"
-    style={{ minHeight: 'calc(100svh - var(--nav-height, 56px))' }}
+    className="hero-page flex flex-col justify-start items-center md:items-start gap-6 md:gap-8 px-4 sm:px-6 max-w-7xl mx-auto text-center md:text-left pt-16 sm:pt-20 md:pt-28 pb-10 md:pb-16"
   >
     <AnimatedItem className="space-y-4 max-w-4xl">
       <h1 className="text-display">
