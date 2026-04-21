@@ -12,16 +12,6 @@ const Certifications = () => {
       title: 'CCNA badge',
       text: 'Cisco-verified badge for completing the CCNA: Switching, Routing, and Wireless Essentials course. Demonstrated foundation in switching operations, wired and wireless LAN configuration, security best practices, and redundancy protocols. Completed 45 practice activities and 21 hours of hands-on labs using Cisco Packet Tracer.',
     },
-    {
-      src: '/assets/certificates/DB2025.jpg',
-      title: 'Database Programming certificate',
-      text: 'Participated in the TECH Talk: Database Programming during College Days 2025 at the University of Cebu - Lapu-Lapu and Mandaue. Gained deeper understanding of database programming fundamentals including query design and data management practices.',
-    },
-    {
-      src: '/assets/certificates/ICT2025.jpg',
-      title: 'UC ICT Congress certificate',
-      text: 'Recognized for outstanding contribution during the 11th UC ICT Congress 2025 with the theme "AI Powered-ICT: Shaping the Future with Responsibility," held at SM Seaside Sky Hall, Cebu. Gained exposure to new tech integrations and software projects showcased by peers across UC campuses beyond UCLM.',
-    },
   ];
 
   return (

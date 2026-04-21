@@ -1,57 +1,66 @@
-import { Code2, Bot, Layers } from 'lucide-react';
+import { Atom, Code2, Database, Figma } from 'lucide-react';
 import { SectionWrapper, AnimatedItem } from '../components/shared';
 
-const skillGroups = [
+const featuredSkills = [
+  { icon: Atom,     name: 'React',      description: 'Frontend UI, component architecture' },
+  { icon: Code2,    name: 'HTML & CSS', description: 'Markup and styling fundamentals' },
+  { icon: Database, name: 'Supabase',   description: 'Backend, auth, database queries' },
+  { icon: Figma,    name: 'Figma',      description: 'UI design, prototyping, wireframing' },
+];
+
+const skillCategories = [
   {
-    title: 'Technical',
-    icon: Code2,
-    skills: ['HTML & CSS', 'JavaScript', 'TypeScript', 'React', 'Node.js', 'Python', 'Supabase', 'REST APIs'],
+    title: 'Also Technical',
+    skills: ['TypeScript', 'Python', 'JavaScript', 'Java', 'Node.js', 'REST APIs', 'Godot', 'GDScript', 'SQL', 'Git', 'GitHub', 'Vercel'],
   },
   {
     title: 'AI & Tools',
-    icon: Bot,
     skills: ['Google AI Studio', 'NotebookLM', 'HeyGen', 'LLM API Integration', 'Prompt Engineering', 'LLMs', 'AI Code Assistants'],
   },
   {
     title: 'Design & Systems',
-    icon: Layers,
     skills: ['Systems Architecture', 'Database Schema', 'UI/UX Design', 'User Flow Mapping', 'Wireframing (Figma)', 'Mind Mapping', 'System Diagramming'],
   },
 ];
 
 const Skills = () => (
-    <SectionWrapper id="skills">
-      <AnimatedItem>
-      <h2 className="text-section-title mb-8 text-brand-cream">Skills</h2>
-      </AnimatedItem>
-    <AnimatedItem>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {skillGroups.map((group, i) => {
-          const Icon = group.icon;
+  <SectionWrapper id="skills">
+    <AnimatedItem className="mb-10">
+      <span className="text-label text-brand-muted tracking-wider mb-4 block">What I work with daily</span>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-3">
+        {featuredSkills.map((skill) => {
+          const Icon = skill.icon;
           return (
             <div
-              key={i}
-              className={`bg-brand-dark/30 border border-white/10 rounded-2xl p-5 space-y-4 ${
-                i === skillGroups.length - 1 ? 'md:col-span-1' : ''
-              }`}
+              key={skill.name}
+              className="bg-brand-accent/8 border border-brand-accent/25 rounded-2xl p-5 flex flex-col gap-2"
             >
-              <div className="flex items-center gap-2">
-                <Icon className="w-4 h-4 text-brand-accent" />
-                <span className="text-label text-brand-muted">{group.title}</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {group.skills.map((skill, j) => (
-                  <span
-                    key={j}
-                    className="text-chip px-3 py-1.5 rounded-lg border border-brand-accent/30 bg-brand-accent/12 text-brand-accent"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <Icon className="w-5 h-5 text-brand-accent" />
+              <span className="text-meta font-semibold text-brand-cream">{skill.name}</span>
+              <span className="text-chip text-brand-gray/75">{skill.description}</span>
             </div>
           );
         })}
+      </div>
+    </AnimatedItem>
+
+    <AnimatedItem>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4">
+        {skillCategories.map((category) => (
+          <div key={category.title} className="space-y-3">
+            <span className="text-label text-brand-muted tracking-wider">{category.title}</span>
+            <div className="flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="text-chip px-3 py-1.5 rounded-lg border border-brand-accent/30 bg-brand-accent/12 text-brand-accent"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </AnimatedItem>
   </SectionWrapper>
