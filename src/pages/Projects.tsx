@@ -49,7 +49,7 @@ const projects: Project[] = [
     title: 'AIRA: HR Automation System with AI Agent Integration',
     role: 'Lead & Full Stack Developer | Systems Architect',
     type: 'Company Internal System',
-    stack: ['React 19', 'Vite', 'TypeScript', 'Supabase', 'Nodemailer', 'Google APIs'],
+    stack: ['React', 'TypeScript', 'Supabase', 'Openrouter API', 'Vercel'],
     highlights: [
       'AI-powered email scanning',
       'Automated applicant extraction',
@@ -74,9 +74,10 @@ const projects: Project[] = [
   },
   {
     title: 'Lifewood Website Imitation',
+    visitSite: 'https://lifewoodwebsite.vercel.app/',
     role: 'Lead & Fullstack Dev',
     type: 'Internship Project',
-    stack: ['TypeScript', 'JavaScript', 'HTML', 'Express', 'Supabase', 'Tailwind', 'PostgreSQL'],
+    stack: ['React', 'TypeScript', 'Supabase', 'Vercel'],
     highlights: [
       '3 admin role tiers',
       'HR automation system',
@@ -84,7 +85,6 @@ const projects: Project[] = [
       'Interactive internal news module',
     ],
     description: <>An internship project wherein I had to replicate the company website while introducing new features and interactions for both users and administrators. The frontend covers company information, services, office location, an about page, open job positions, and internal news. The backend supports <span className="text-brand-accent font-semibold">three admin roles — superadmin, HR, and management</span> — each with a tailored interface. Key features include managing user inquiries, processing client project proposals, a built-in HR automation system, job posting management, and internal news publishing. Supporting modules include system logs for tracking admin actions and a notification system for new interactions across the platform.</>,
-    visitSite: 'https://lifewoodwebsite.vercel.app/',
   },
 ];
 
@@ -186,18 +186,6 @@ const Projects = () => {
                         ))}
                       </ul>
                     </div>
-                    {selected.visitSite && (
-                      <a
-                        href={selected.visitSite}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="visit-site-btn inline-flex items-center gap-2 text-action text-brand-accent px-4 py-2.5 rounded-lg border border-brand-accent/20 bg-brand-accent/20 hover:bg-brand-accent/35 transition-all font-semibold"
-                      >
-                        <img src="/assets/vercel.png" alt="Vercel" className="w-3 h-3 object-contain invert" />
-                        Live demo
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    )}
                   </div>
 
                   {/* Right: title + description */}
@@ -209,6 +197,18 @@ const Projects = () => {
                           <span className="text-chip px-2.5 py-1 rounded-full border border-brand-accent/40 bg-brand-accent/12 text-brand-accent animate-pulse shrink-0">
                             In Progress
                           </span>
+                        )}
+                        {selected.visitSite && (
+                          <a
+                            href={selected.visitSite}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="visit-site-btn inline-flex items-center gap-2 text-action text-brand-accent px-4 py-2.5 rounded-lg border border-brand-accent/20 bg-brand-accent/20 hover:bg-brand-accent/35 transition-all font-semibold"
+                          >
+                            <img src="/assets/vercel.png" alt="Vercel" className="w-3 h-3 object-contain invert" />
+                            Live demo
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
                         )}
                       </div>
                       <button
