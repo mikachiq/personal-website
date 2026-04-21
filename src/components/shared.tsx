@@ -25,10 +25,12 @@ export const SectionWrapper = ({
   children,
   id,
   className = '',
+  style,
 }: {
   children: React.ReactNode;
   id: string;
   className?: string;
+  style?: React.CSSProperties;
 }) => (
   <motion.section
     key={id}
@@ -37,6 +39,7 @@ export const SectionWrapper = ({
     animate="animate"
     exit="exit"
     className={`section-wrapper pb-12 px-4 sm:px-6 max-w-7xl mx-auto ${className}`.trim()}
+    style={style}
   >
     {children}
   </motion.section>
