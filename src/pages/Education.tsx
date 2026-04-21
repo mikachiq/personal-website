@@ -37,7 +37,7 @@ const Education = () => {
   ];
 
   return (
-    <SectionWrapper id="education">
+    <SectionWrapper id="education" className="pt-16 md:pt-24">
       <div className="space-y-12">
         {education.map((edu, i) => (
           <AnimatedItem key={i} className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">

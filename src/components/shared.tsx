@@ -21,14 +21,22 @@ export const itemVariants = {
   },
 };
 
-export const SectionWrapper = ({ children, id }: { children: React.ReactNode; id: string }) => (
+export const SectionWrapper = ({
+  children,
+  id,
+  className = '',
+}: {
+  children: React.ReactNode;
+  id: string;
+  className?: string;
+}) => (
   <motion.section
     key={id}
     variants={pageVariants}
     initial="initial"
     animate="animate"
     exit="exit"
-    className="pt-28 md:pt-32 pb-12 px-4 sm:px-6 max-w-7xl mx-auto"
+    className={`section-wrapper pb-12 px-4 sm:px-6 max-w-7xl mx-auto ${className}`.trim()}
   >
     {children}
   </motion.section>

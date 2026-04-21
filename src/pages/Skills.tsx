@@ -24,7 +24,7 @@ const skillCategories = [
 ];
 
 const Skills = () => (
-  <SectionWrapper id="skills">
+    <SectionWrapper id="skills" className="pt-14 md:pt-20">
     <AnimatedItem className="mb-10">
       <span className="text-label text-brand-muted tracking-wider mb-4 block">What I work with daily</span>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-3">

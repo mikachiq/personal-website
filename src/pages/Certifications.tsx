@@ -15,10 +15,10 @@ const Certifications = () => {
   ];
 
   return (
-    <SectionWrapper id="certifications">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24">
+    <SectionWrapper id="certifications" className="pt-16 md:pt-24">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24 mt-8 md:mt-12">
         {certs.map((cert, i) => (
-          <AnimatedItem key={i} className={`flex flex-col gap-6 ${i % 2 !== 0 ? 'md:mt-24' : ''}`}>
+          <AnimatedItem key={i} className={`flex flex-col gap-6`}>
             <div className="glass-card p-4">
               <div className="block aspect-video rounded-xl overflow-hidden relative">
                 <img src={cert.src} alt={cert.title} className="w-full h-full object-contain bg-[#D9D9D9]" />

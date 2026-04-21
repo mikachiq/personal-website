@@ -20,7 +20,7 @@ const AboutMe = () => {
   const duplicatedFacts = [...funFacts, ...funFacts, ...funFacts];
 
   return (
-    <SectionWrapper id="about">
+    <SectionWrapper id="about" className="pt-20 md:pt-24">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-stretch">
         <AnimatedItem className="md:col-span-3 space-y-6">
           <div className="aspect-[4/3] sm:aspect-video bg-brand-dark/30 rounded-3xl border border-white/5 overflow-hidden shadow-2xl relative">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { Section } from '../types';
@@ -7,24 +7,27 @@ const Navbar = ({ activeSection, onSectionChange }: { activeSection: Section; on
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems: { id: Section; label: string }[] = [
+    { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Me' },
     { id: 'education', label: 'Education' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
     { id: 'certifications', label: 'Certifications' },
+    { id: 'resume', label: 'Resume' },
   ];
 
-  useEffect(() => {
+  const handleNavClick = (section: Section) => {
     setMobileMenuOpen(false);
-  }, [activeSection]);
+    onSectionChange(section);
+  };
 
   return (
-    <nav className="fixed top-5 md:top-10 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-7xl">
+    <nav id="site-nav" className="fixed top-5 md:top-10 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-7xl">
       <div className="flex items-center justify-between gap-4 md:gap-6">
         <div className="flex items-center gap-4 md:gap-6">
           <button
-            onClick={() => onSectionChange('home')}
+            onClick={() => handleNavClick('home')}
             className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-brand-accent shadow-lg transition-transform hover:scale-110 active:scale-95 touch-manipulation"
           >
             <img src="/assets/ICON.webp" alt="Avatar" className="w-full h-full object-cover" />
@@ -34,7 +37,7 @@ const Navbar = ({ activeSection, onSectionChange }: { activeSection: Section; on
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => onSectionChange(item.id)}
+                onClick={() => handleNavClick(item.id)}
                 className={`px-5 py-3 rounded-full text-action transition-all duration-300 active:scale-95 touch-manipulation ${
                   activeSection === item.id
                     ? 'bg-brand-accent text-white shadow-lg'
@@ -71,7 +74,7 @@ const Navbar = ({ activeSection, onSectionChange }: { activeSection: Section; on
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => onSectionChange(item.id)}
+                  onClick={() => handleNavClick(item.id)}
                   className={`min-h-14 rounded-2xl px-4 py-4 text-action transition-all duration-300 active:scale-95 touch-manipulation ${
                     activeSection === item.id
                       ? 'bg-brand-accent text-white shadow-lg'
