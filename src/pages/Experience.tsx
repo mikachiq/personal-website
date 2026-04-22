@@ -41,7 +41,7 @@ const Experience = () => {
       images: ['/assets/job/hola.jpg', '/assets/job/hola2.jpg'],
     },
     {
-      title: 'Game Tester at Railings University / PIF Nation',
+      title: 'Game Tester at Railings University / PIF Nation (Volunteer)',
       period: 'July 2022 - September 2022',
       bullets: [
         'Identified and reported bugs in pre-release games, improving user experience',

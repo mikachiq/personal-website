@@ -11,10 +11,10 @@ const AboutMe = () => {
   ];
   const funFacts: { label: string; image?: string; position?: string; minH?: string }[] = [
     { label: 'I used to do competitive speedcubing', image: '/assets/WCA.png', position: 'center 35%' },
-    { label: 'I do cosplay', image: '/assets/cosplay.jpg', position: 'center 30%', minH: '150px' },
-    { label: 'I go to the gym 5x a week', image: '/assets/gym.jpg', position: 'center 55%' },
+    { label: 'I live an active lifestyle', image: '/assets/gym.jpg', position: 'center 55%' },
     { label: 'I have a collection of figurines', image: '/assets/collection.jpg' },
     { label: 'I love animals', image: '/assets/cats.jpeg' },
+    { label: 'I do cosplay', image: '/assets/cosplay.jpg', position: 'center 30%', minH: '150px' },
   ];
 
   const duplicatedFacts = [...funFacts, ...funFacts, ...funFacts];
@@ -59,11 +59,11 @@ const AboutMe = () => {
           <h2 className="text-card-title text-brand-cream">Atilla Hadrian Castrodes</h2>
           <div className="space-y-5 text-brand-gray/90 text-body">
             <p>
-              I studied BSIT at UCLM and found my calling in making things work on their own.
-              Now I design automation systems and AI integrations that do the heavy lifting so people don't have to.
+              I studied BSIT at UCLM and found my calling during my internship.
+              Now I build AI agents, automations, and full web systems.
             </p>
             <p>
-              My stronghold is definitely system architecture and frontend design, with a bit of database queries.
+              My strengths are system architecture, technical writing, and project management, while I keep sharpening my coding skills in tech and AI.
             </p>
           </div>
         </AnimatedItem>
@@ -93,10 +93,10 @@ const AboutMe = () => {
                     <img
                       src={fact.image}
                       alt={fact.label}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover opacity-60"
                       style={{ objectPosition: fact.position ?? 'center' }}
                     />
-                    <div className="absolute inset-0 bg-brand-deep/40" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/55 to-transparent" />
                     <span className="absolute inset-0 z-10 flex items-center justify-center text-body-sm font-medium px-4 text-brand-cream">{fact.label}</span>
                   </>
                 ) : (

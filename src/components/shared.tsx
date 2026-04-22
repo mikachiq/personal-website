@@ -59,13 +59,13 @@ export const EduImageCarousel = ({ images, level, positions }: { images: string[
     setIdx((i) => (i + 1) % images.length);
   };
   return (
-    <div className="relative aspect-square bg-brand-dark/30 rounded-3xl border border-white/5 overflow-hidden">
+    <div className="image-tint-frame relative aspect-square bg-brand-dark/30 rounded-3xl border border-white/5 overflow-hidden">
       <AnimatePresence initial={false} mode="wait">
         <motion.img
           key={idx}
           src={images[idx]}
           alt={level}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="image-tint absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: positions?.[idx] ?? 'center center' }}
           initial={{ x: direction * 28, opacity: 0.6 }}
           animate={{ x: 0, opacity: 1 }}

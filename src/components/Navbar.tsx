@@ -30,7 +30,7 @@ const Navbar = ({ activeSection, onSectionChange }: { activeSection: Section; on
             onClick={() => handleNavClick('home')}
             className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-brand-accent shadow-lg transition-transform hover:scale-110 active:scale-95 touch-manipulation"
           >
-            <img src="/assets/ICON.webp" alt="Avatar" className="w-full h-full object-cover" />
+            <img src="/assets/Castrodes_ID.png" alt="Avatar" className="w-full h-full object-cover" />
           </button>
 
           <div className="hidden md:flex bg-brand-accent/20 backdrop-blur-xl border border-white/10 rounded-full p-2 items-center gap-2 shadow-2xl">

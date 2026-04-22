@@ -20,8 +20,8 @@ const Certifications = () => {
         {certs.map((cert, i) => (
           <AnimatedItem key={i} className={`flex flex-col gap-6`}>
             <div className="glass-card p-4">
-              <div className="block aspect-video rounded-xl overflow-hidden relative">
-                <img src={cert.src} alt={cert.title} className="w-full h-full object-contain bg-[#D9D9D9]" />
+              <div className="image-tint-frame block aspect-video rounded-xl overflow-hidden relative">
+                <img src={cert.src} alt={cert.title} className="image-tint w-full h-full object-contain bg-[#D9D9D9]" />
               </div>
             </div>
             <p className="text-body text-brand-gray/90">{cert.text}</p>

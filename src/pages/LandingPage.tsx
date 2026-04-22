@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Triangle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { AnimatedItem, pageVariants } from '../components/shared';
 import { HomeProps } from '../types';
 
@@ -66,12 +66,13 @@ const LandingPage = ({ onNext }: HomeProps) => (
       </button>
     </AnimatedItem>
 
-    <AnimatedItem className="mt-8 md:mt-12 space-y-2 max-w-xl">
-      <p className="text-body-sm opacity-60">Check out my gaming portfolio if you are a gacha nerd like me :P</p>
+    <AnimatedItem className="mt-8 md:mt-12 max-w-xl min-h-[3.75rem]">
+      <div aria-hidden="true" className="h-full" />
+      {/* <p className="text-body-sm opacity-60">Check out my gaming portfolio if you are a gacha nerd like me :P</p>
       <a href="#" className="flex items-center gap-2 text-brand-accent text-action hover:underline">
         <Triangle className="w-4 h-4 fill-current" />
         link here
-      </a>
+      </a> */}
     </AnimatedItem>
   </motion.div>
 );
