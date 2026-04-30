@@ -1,25 +1,38 @@
-import { Atom, Code2, Database, Figma } from 'lucide-react';
+import { Bot, Code2, Database, Workflow } from 'lucide-react';
 import { SectionWrapper, AnimatedItem } from '../components/shared';
 
 const featuredSkills = [
-  { icon: Atom,     name: 'React',      description: 'Frontend UI, component architecture' },
-  { icon: Code2,    name: 'HTML & CSS', description: 'Markup and styling fundamentals' },
-  { icon: Database, name: 'Supabase',   description: 'Backend, auth, database queries' },
-  { icon: Figma,    name: 'Figma',      description: 'UI design, prototyping, wireframing' },
+  { icon: Code2, name: 'React', description: 'Frontend apps, dashboards, and internal tools' },
+  { icon: Database, name: 'Supabase', description: 'Database, auth, and full-stack integration' },
+  { icon: Workflow, name: 'Systems Design', description: 'Architecture, flows, and technical planning' },
+  { icon: Bot, name: 'AI Automation', description: 'LLMs, RAG, prompt design, and n8n workflows' },
 ];
 
 const skillCategories = [
   {
-    title: 'Also Technical',
-    skills: ['TypeScript', 'Python', 'JavaScript', 'Java', 'Node.js', 'REST APIs', 'Godot', 'GDScript', 'SQL', 'Git', 'GitHub', 'Vercel'],
+    title: 'Technical Skills',
+    skills: ['HTML & CSS', 'JavaScript', 'React', 'Python', 'Node.js', 'Supabase', 'Godot', 'GDScript', 'APIs', 'Git', 'Vercel'],
   },
   {
-    title: 'AI & Tools',
-    skills: ['Google AI Studio', 'NotebookLM', 'HeyGen', 'LLM API Integration', 'Prompt Engineering', 'LLMs', 'AI Code Assistants'],
+    title: 'Core Competencies',
+    skills: [
+      'System Architecture & Design',
+      'Database Schema Design',
+      'UI/UX Design',
+      'User Flow Mapping',
+      'Wireframing (Figma)',
+      'Mind Mapping (MindManager)',
+      'System Diagramming',
+      'Project Management',
+      'Data Annotation',
+      'Team Collaboration',
+      'SDLC',
+      'Research',
+    ],
   },
   {
-    title: 'Design & Systems',
-    skills: ['Systems Architecture', 'Database Schema', 'UI/UX Design', 'User Flow Mapping', 'Wireframing (Figma)', 'Mind Mapping', 'System Diagramming'],
+    title: 'AI Tools & Literacy',
+    skills: ['Google AI Studio', 'NotebookLM', 'HeyGen', 'RAG', 'Prompt Engineering', 'LLMs', 'AI Code Assistants', 'n8n', 'Gamma', 'AIGC', 'HIL'],
   },
 ];
 

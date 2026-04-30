@@ -46,7 +46,7 @@ const projects: Project[] = [
     description: 'A machine learning-based university recommendation system designed to help Filipino students make informed decisions when selecting a tertiary school. Collects real, firsthand student data from Cebu City, Mandaue City, and Lapu-Lapu City, leveraging a Random Forest model to uncover key factors influencing university choices. Generates personalized recommendations based on location, cost, programs, environment, and facilities — with university browsing filters, user profiles, an admin panel, and explainable insights through feature importance and clustering analysis. Led the development team, managing internal workflows and coordinating external processes throughout the project lifecycle.',
   },
   {
-    title: 'AIRA: HR Automation System with AI Agent Integration',
+    title: 'AIRA: An HR Automation System with AI Agent Integration',
     role: 'Lead & Full Stack Developer | Systems Architect',
     type: 'Company Internal System',
     stack: ['React', 'TypeScript', 'Supabase', 'Openrouter API', 'Vercel'],
@@ -59,8 +59,8 @@ const projects: Project[] = [
     description: "Designed and developed an AI-powered HR agent that automates the company's hiring pipeline — scanning the HR inbox, extracting applicant data, and surfacing it directly on the system dashboard. Automatically sends interview links to applicants, with ready-to-use email templates for scheduling, rejection, follow-ups, etc. for HR utilization. Features an integrated AI agent that retrieves and relays applicant status on command, a built-in calendar for tracking scheduled interviews, and a superadmin role to manage and onboard users across HR, management, and developer tiers.",
   },
   {
-    title: 'Malunggay Pandezzel',
-    role: 'Game Designer and Lead Developer',
+    title: 'Graduation Curse',
+    role: 'Game Designer | Lead Developer',
     type: 'Game Dev',
     stack: ['Godot', 'GDScript', 'Blender', 'Sketchfab', 'Trellis3D', 'Mixamo'],
     highlights: [
@@ -75,7 +75,7 @@ const projects: Project[] = [
   {
     title: 'Lifewood Website Imitation',
     visitSite: 'https://lifewoodwebsite.vercel.app/',
-    role: 'Lead & Fullstack Dev',
+    role: 'Lead & Fullstack Developer',
     type: 'Internship Project',
     stack: ['React', 'TypeScript', 'Supabase', 'Vercel'],
     highlights: [
@@ -85,6 +85,19 @@ const projects: Project[] = [
       'Interactive internal news module',
     ],
     description: <>An internship project wherein I had to replicate the company website while introducing new features and interactions for both users and administrators. The frontend covers company information, services, office location, an about page, open job positions, and internal news. The backend supports <span className="text-brand-accent font-semibold">three admin roles — superadmin, HR, and management</span> — each with a tailored interface. Key features include managing user inquiries, processing client project proposals, a built-in HR automation system, job posting management, and internal news publishing. Supporting modules include system logs for tracking admin actions and a notification system for new interactions across the platform.</>,
+  },
+  {
+    title: 'Adssistance: An automation email assistant agent',
+    role: 'Lead Automation Developer',
+    type: 'Personal Project',
+    stack: ['n8n', 'OpenRouter API', 'HTML & CSS', 'JavaScript'],
+    highlights: [
+      'Automation email assistant for admins',
+      'Generates context-aware AI replies',
+      'Admin-provided context improves response accuracy',
+      'Built around practical email workflow support',
+    ],
+    description: 'A personal automation project built as an email assistant agent. It generates context-aware replies and allows additional admin-provided context to improve the relevance and accuracy of the responses it produces.',
   },
 ];
 
@@ -99,7 +112,7 @@ const Projects = () => {
           <AnimatedItem key={i} className="h-full">
             <button
               onClick={() => setSelected(project)}
-              className="glass-card p-5 w-full h-72 text-left flex flex-col gap-3 hover:border-brand-accent/40 transition-colors"
+              className="glass-card project-card p-5 w-full h-72 text-left flex flex-col gap-3 hover:border-brand-accent/40 transition-colors"
             >
               <div className="h-24 overflow-hidden space-y-1.5 shrink-0">
                 <div className="flex items-start justify-between gap-2">
@@ -150,13 +163,13 @@ const Projects = () => {
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 pointer-events-none"
             >
-              <div className="glass-card w-full max-w-4xl max-h-[85vh] overflow-y-auto pointer-events-auto">
+              <div className="glass-card w-full max-w-5xl max-h-[85vh] overflow-y-auto pointer-events-auto bg-[linear-gradient(155deg,rgba(39,82,132,0.94),rgba(18,57,98,0.9))] border-white/15 shadow-[0_32px_80px_rgba(6,18,35,0.5)]">
 
                 {/* Two-panel body */}
                 <div className="grid grid-cols-1 md:grid-cols-3">
 
                   {/* Left: metadata */}
-                  <div className="space-y-5 p-6 md:border-r border-white/10">
+                  <div className="space-y-5 p-6 md:border-r border-white/12 bg-white/[0.03]">
                     <div className="space-y-0.5">
                       <p className="text-label text-brand-muted">Role</p>
                       <p className="text-body-sm font-bold text-brand-cream">{selected.role}</p>
@@ -189,7 +202,7 @@ const Projects = () => {
                   </div>
 
                   {/* Right: title + description */}
-                  <div className="md:col-span-2 p-6 space-y-3">
+                  <div className="md:col-span-2 p-6 space-y-3 bg-white/[0.015]">
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-center gap-3 flex-wrap">
                         <h2 className="text-card-title text-brand-cream">{selected.title}</h2>
