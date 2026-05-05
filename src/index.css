@@ -159,6 +159,147 @@
   opacity: 1;
 }
 
+.project-preview {
+  position: relative;
+  height: 11rem;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top left, rgba(155, 176, 240, 0.22), transparent 42%),
+    linear-gradient(155deg, rgba(15, 42, 72, 0.92), rgba(8, 26, 48, 0.95));
+}
+
+.project-preview::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 18, 34, 0.02), rgba(5, 18, 34, 0.38));
+  pointer-events: none;
+}
+
+.project-preview-image {
+  filter: saturate(0.92) contrast(1.02);
+  transition:
+    transform 240ms ease,
+    filter 240ms ease;
+}
+
+.project-preview-stage {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.project-preview-slide {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 700ms ease;
+}
+
+.project-preview-slide.is-active {
+  opacity: 1;
+}
+
+.project-card:hover .project-preview-image,
+.project-card:focus-visible .project-preview-image {
+  transform: scale(1.02);
+  filter: saturate(1) contrast(1.06);
+}
+
+.project-preview-fallback {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: flex-end;
+  padding: 1rem;
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, rgba(23, 63, 105, 0.35), rgba(7, 22, 40, 0.06)),
+    radial-gradient(circle at 80% 20%, rgba(250, 226, 190, 0.1), transparent 24%);
+}
+
+.project-preview-orb {
+  position: absolute;
+  right: -1.5rem;
+  top: -1rem;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 999px;
+  background: rgba(155, 176, 240, 0.18);
+  filter: blur(18px);
+}
+
+.project-preview-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 2.75rem 2.75rem;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 88%);
+  opacity: 0.14;
+}
+
+.project-preview-watermark {
+  position: absolute;
+  left: 1rem;
+  top: 0.9rem;
+  max-width: 80%;
+  font-size: clamp(1.75rem, 2vw, 2.25rem);
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.08);
+  text-wrap: balance;
+}
+
+.project-preview-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.project-preview-tag,
+.project-preview-stack,
+.project-preview-badge {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+}
+
+.project-preview-tag,
+.project-preview-stack {
+  background: rgba(10, 35, 64, 0.45);
+  padding: 0.45rem 0.75rem;
+  color: rgba(250, 226, 190, 0.92);
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.project-preview-stack {
+  color: rgba(217, 217, 217, 0.8);
+}
+
+.project-preview-badge {
+  position: absolute;
+  left: 0.85rem;
+  top: 0.85rem;
+  z-index: 2;
+  background: rgba(10, 35, 64, 0.56);
+  padding: 0.45rem 0.75rem;
+  color: rgba(250, 226, 190, 0.94);
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
 .nav-pill {
   @apply bg-brand-accent/20 backdrop-blur-lg border border-white/10 rounded-full px-6 py-2 transition-all duration-300 hover:bg-brand-accent/40;
 }
