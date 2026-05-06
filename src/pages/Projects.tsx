@@ -132,6 +132,11 @@ const projects: Project[] = [
       </>
     ),
     preview: {
+      images: [
+        '/assets/projects%20folder/lifewood1.jpg',
+        '/assets/projects%20folder/lifewood2.jpg',
+        '/assets/projects%20folder/lifewood3.jpg',
+      ],
       accentLabel: 'Web Platform Clone',
     },
   },

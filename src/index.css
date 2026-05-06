@@ -60,6 +60,24 @@
     display: block;
   }
 
+  /* Typewriter caret */
+  .typewriter-caret {
+    display: inline-block;
+    width: 0.6ch;
+    background: linear-gradient(90deg, rgba(250,226,190,0.95), rgba(250,226,190,0.95));
+    margin-left: 0.15rem;
+    animation: type-caret 1s steps(1) infinite;
+    vertical-align: bottom;
+    height: 1.2em;
+    opacity: 0.95;
+  }
+
+  @keyframes type-caret {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 10px;

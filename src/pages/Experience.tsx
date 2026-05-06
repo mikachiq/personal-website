@@ -55,7 +55,7 @@ const Experience = () => {
   return (
     <SectionWrapper id="experience" className="pt-16 md:pt-24">
       <AnimatedItem>
-        <h2 className="text-section-title text-right mb-12 uppercase text-brand-cream">Job Experience Across All Fields</h2>
+        <h2 className="text-section-title text-center mb-12 uppercase text-brand-cream">Job Experience Across All Fields</h2>
       </AnimatedItem>
       <div className="space-y-12">
         {experiences.map((exp, i) => (
