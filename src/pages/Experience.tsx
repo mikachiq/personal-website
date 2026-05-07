@@ -4,7 +4,7 @@ import { SectionWrapper, AnimatedItem, EduImageCarousel } from '../components/sh
 const Experience = () => {
   const experiences = [
     {
-      title: 'Website Developer intern at Lifewood Data Technology',
+      title: 'IT intern at Lifewood Data Technology',
       period: 'January 2026 - May 2026 (540 hours)',
       bullets: [
         'Designed system architecture, database structures, and user flows for internal tools',

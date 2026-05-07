@@ -7,7 +7,6 @@ const Navbar = ({ activeSection, onSectionChange }: { activeSection: Section; on
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems: { id: Section; label: string }[] = [
-    { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Me' },
     { id: 'education', label: 'Education' },
     { id: 'experience', label: 'Experience' },

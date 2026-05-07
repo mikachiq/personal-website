@@ -15,6 +15,7 @@ import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Certifications from './pages/Certifications';
 import Resume from './pages/Resume';
+import Footer from './components/Footer';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<Section>('home');
@@ -113,6 +114,7 @@ export default function App() {
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-accent/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-brand-accent/5 rounded-full blur-[120px]" />
       </div>
+      <Footer />
     </div>
   );
 }

@@ -103,6 +103,7 @@ const projects: Project[] = [
         '/assets/projects%20folder/Gradcurse1.jpeg',
         '/assets/projects%20folder/gradcurse2.jpeg',
         '/assets/projects%20folder/gradcurse3.jpeg',
+        '/assets/projects%20folder/gradcurse4.jpeg',
       ],
       accentLabel: '3D Horror Comedy',
     },
