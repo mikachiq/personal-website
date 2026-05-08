@@ -170,20 +170,98 @@
   animation: hero-ambient-drift 9s ease-in-out infinite;
 }
 
-.hero-social-dock {
-  transform: translateZ(0);
-  animation: hero-float-soft 6.5s ease-in-out infinite;
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease;
+.glass-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 6.4rem);
+  gap: 1.55rem;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
 }
 
-.hero-social-dock:hover {
-  transform: translateY(-3px);
+.glass-icon-tile {
+  position: relative;
+  display: block;
+  width: 6.4rem;
+  min-height: 5.15rem;
+  border-radius: 1.5rem;
+  isolation: isolate;
+  transform: translateZ(0);
+}
+
+.glass-icon-tile-with-caption {
+  min-height: 5.15rem;
+}
+
+.glass-icon-shadow,
+.glass-icon-surface {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.glass-icon-shadow {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(0.78rem, -0.62rem) rotate(12deg);
+  filter: blur(0.2px);
+  opacity: 0.34;
+  z-index: -1;
+}
+
+.glass-icon-surface {
+  height: 5.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.1)),
+    rgba(255, 255, 255, 0.18);
   box-shadow:
-    0 28px 65px rgba(5, 18, 34, 0.34),
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
-    inset 0 -18px 38px rgba(255, 255, 255, 0.28);
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -18px 28px rgba(255, 255, 255, 0.1),
+    0 18px 34px rgba(5, 18, 34, 0.22);
+  backdrop-filter: blur(18px) saturate(1.4);
+}
+
+.glass-icon-tile-with-caption .glass-icon-surface {
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.glass-icon-surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.26), transparent 46%);
+  pointer-events: none;
+}
+
+.glass-icon-tile:hover .glass-icon-surface,
+.glass-icon-tile:focus-visible .glass-icon-surface {
+  border-color: rgba(255, 255, 255, 0.5);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.14)),
+    rgba(255, 255, 255, 0.22);
+}
+
+.glass-icon-tile:focus-visible {
+  outline: 2px solid rgba(250, 226, 190, 0.75);
+  outline-offset: 0.3rem;
+}
+
+.glass-icon-caption {
+  position: relative;
+  z-index: 1;
+  max-width: 5.85rem;
+  color: rgba(250, 226, 190, 0.94);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 7px 18px rgba(5, 18, 34, 0.42);
+  white-space: nowrap;
 }
 
 .hero-image-frame {
@@ -459,6 +537,45 @@
   line-height: 1;
 }
 
+.nav-glass {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.06)),
+    rgba(18, 57, 98, 0.28);
+  box-shadow:
+    0 24px 55px rgba(5, 18, 34, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.36),
+    inset 0 -18px 34px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(22px) saturate(1.55);
+  -webkit-backdrop-filter: blur(22px) saturate(1.55);
+}
+
+.nav-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0.08rem;
+  z-index: -1;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 48%),
+    radial-gradient(circle at 18% 12%, rgba(250, 226, 190, 0.18), transparent 34%);
+  pointer-events: none;
+}
+
+.nav-glass::after {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  top: 0.35rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.62), transparent);
+  pointer-events: none;
+}
+
 .nav-pill {
   @apply bg-brand-accent/20 backdrop-blur-lg border border-white/10 rounded-full px-6 py-2 transition-all duration-300 hover:bg-brand-accent/40;
 }
@@ -673,7 +790,6 @@
   .hero-title,
   .hero-subtitle,
   .hero-showcase::after,
-  .hero-social-dock,
   .hero-image-frame,
   .hero-image-frame::before,
   .hero-image-frame::after {

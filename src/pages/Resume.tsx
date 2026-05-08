@@ -1,10 +1,21 @@
 import { SectionWrapper, AnimatedItem } from '../components/shared';
+import Threads from '../components/Threads';
 
 const resumePreviewPath = '/assets/resume/resume.jpg';
 
 const Resume = () => (
-  <SectionWrapper id="resume" className="pt-16 md:pt-24">
-    <AnimatedItem>
+  <SectionWrapper id="resume" className="relative isolate overflow-hidden pt-16 md:pt-24">
+    <div className="pointer-events-none absolute inset-0 -z-10 opacity-70">
+      <Threads
+        color={[0.61, 0.69, 0.94]}
+        amplitude={1.15}
+        distance={0.18}
+        aria-hidden="true"
+      />
+    </div>
+    <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_22%,rgba(250,226,190,0.12),transparent_32%),linear-gradient(90deg,rgba(18,57,98,0.92),rgba(10,35,64,0.62))]" />
+
+    <AnimatedItem className="relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,520px)_1fr] gap-10 xl:gap-14 items-start">
         <div className="contact-text-panel space-y-8">
           <div className="space-y-6">
