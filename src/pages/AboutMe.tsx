@@ -2,6 +2,14 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { SectionWrapper, AnimatedItem } from '../components/shared';
 
+const funFacts: { label: string; image?: string; position?: string }[] = [
+  { label: 'I used to do competitive speedcubing', image: '/assets/fun-facts/wca.jpg' },
+  { label: 'I live an active lifestyle', image: '/assets/fun-facts/gym.jpg' },
+  { label: 'I have a collection of figurines', image: '/assets/fun-facts/collection.jpg' },
+  { label: 'I love animals', image: '/assets/fun-facts/cats.jpg' },
+  { label: 'I do cosplay', image: '/assets/fun-facts/cosplay.jpg' },
+];
+
 const AboutMe = () => {
   const [photoIdx, setPhotoIdx] = useState(0);
   const [photoDirection, setPhotoDirection] = useState(1);
@@ -9,15 +17,6 @@ const AboutMe = () => {
     { src: '/assets/aboutmepicture1.jpg', position: '50% 40%' },
     { src: '/assets/me.jpg', position: 'center 20%' },
   ];
-  const funFacts: { label: string; image?: string; position?: string; minH?: string }[] = [
-    { label: 'I used to do competitive speedcubing', image: '/assets/WCA.png', position: 'center 35%' },
-    { label: 'I live an active lifestyle', image: '/assets/gym.jpg', position: 'center 55%' },
-    { label: 'I have a collection of figurines', image: '/assets/collection.jpg' },
-    { label: 'I love animals', image: '/assets/cats.jpeg' },
-    { label: 'I do cosplay', image: '/assets/cosplay.jpg', position: 'center 30%', minH: '150px' },
-  ];
-
-  const duplicatedFacts = [...funFacts, ...funFacts, ...funFacts];
 
   return (
     <SectionWrapper id="about" className="pt-20 md:pt-24">
@@ -74,38 +73,39 @@ const AboutMe = () => {
           <h3 className="text-card-title uppercase text-brand-muted">Fun Facts About Me</h3>
         </AnimatedItem>
 
-        <AnimatedItem className="relative w-full flex">
-          <motion.div
-            className="flex gap-4 whitespace-nowrap"
-            animate={{ x: ['0%', '-33.333333%'] }}
-            transition={{ ease: 'linear', duration: 15, repeat: Infinity }}
-          >
-            {duplicatedFacts.map((fact, i) => (
-              <div
-                key={i}
-                style={{ minHeight: fact.minH ?? (fact.image ? '105px' : undefined) }}
-                className={`relative group border border-white/5 rounded-2xl text-center overflow-hidden min-w-[190px] sm:min-w-[250px] md:min-w-[300px] ${
-                  fact.image ? 'p-4 sm:p-6' : 'bg-brand-dark/30 hover:bg-brand-dark/50 transition-colors p-4 sm:p-6'
-                }`}
-              >
-                {fact.image ? (
-                  <>
-                    <img
-                      src={fact.image}
-                      alt={fact.label}
-                      className="absolute inset-0 w-full h-full object-cover opacity-60"
-                      style={{ objectPosition: fact.position ?? 'center' }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/55 to-transparent" />
-                    <span className="absolute inset-0 z-10 flex items-center justify-center text-body-sm font-medium px-4 text-brand-cream">{fact.label}</span>
-                  </>
-                ) : (
-                  <span className="text-body-sm font-medium text-brand-cream">{fact.label}</span>
-                )}
+        <div className="fun-facts-viewport relative w-full">
+          <div className="fun-facts-marquee" aria-label="Fun facts carousel">
+            {[0, 1].map((groupIndex) => (
+              <div className="fun-facts-group" aria-hidden={groupIndex === 1} key={groupIndex}>
+                {funFacts.map((fact) => (
+                  <div
+                    key={`${groupIndex}-${fact.label}`}
+                    className={`fun-fact-card relative group border border-white/5 rounded-2xl text-center overflow-hidden ${
+                      fact.image ? '' : 'bg-brand-dark/30 hover:bg-brand-dark/50 transition-colors p-4 sm:p-6'
+                    }`}
+                  >
+                    {fact.image ? (
+                      <>
+                        <img
+                          src={fact.image}
+                          alt={fact.label}
+                          className="absolute inset-0 w-full h-full object-cover opacity-60"
+                          style={{ objectPosition: fact.position ?? 'center' }}
+                          decoding="async"
+                          draggable={false}
+                        />
+                        <div className="absolute inset-0 bg-brand-deep/45" />
+                        <span className="absolute inset-0 z-10 flex items-center justify-center text-body-sm font-medium px-4 text-brand-cream">{fact.label}</span>
+                      </>
+                    ) : (
+                      <span className="text-body-sm font-medium text-brand-cream">{fact.label}</span>
+                    )}
+                  </div>
+                ))}
               </div>
             ))}
-          </motion.div>
-        </AnimatedItem>
+          </div>
+        </div>
       </div>
     </SectionWrapper>
   );

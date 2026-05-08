@@ -16,9 +16,15 @@ import Skills from './pages/Skills';
 import Certifications from './pages/Certifications';
 import Resume from './pages/Resume';
 import Footer from './components/Footer';
+import PortfolioLoader from './components/PortfolioLoader';
+
+const MIN_LOADER_TIME = 1800;
+const LOADER_EXIT_TIME = 520;
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<Section>('home');
+  const [isPortfolioReady, setIsPortfolioReady] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
     const sections: Section[] = ['home', 'about', 'education', 'experience', 'projects', 'skills', 'certifications', 'resume'];
@@ -78,8 +84,49 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    let cancelled = false;
+    let exitTimer: number | undefined;
+    const startedAt = window.performance.now();
+
+    document.body.classList.add('portfolio-loading');
+
+    const waitForWindowLoad = new Promise<void>((resolve) => {
+      if (document.readyState === 'complete') {
+        resolve();
+        return;
+      }
+
+      window.addEventListener('load', () => resolve(), { once: true });
+    });
+
+    const waitForFonts = document.fonts?.ready?.then(() => undefined).catch(() => undefined) ?? Promise.resolve();
+
+    Promise.all([waitForWindowLoad, waitForFonts]).then(() => {
+      const elapsed = window.performance.now() - startedAt;
+      const remaining = Math.max(0, MIN_LOADER_TIME - elapsed);
+
+      window.setTimeout(() => {
+        if (cancelled) return;
+
+        setIsPortfolioReady(true);
+        document.body.classList.remove('portfolio-loading');
+        exitTimer = window.setTimeout(() => {
+          if (!cancelled) setShowLoader(false);
+        }, LOADER_EXIT_TIME);
+      }, remaining);
+    });
+
+    return () => {
+      cancelled = true;
+      document.body.classList.remove('portfolio-loading');
+      if (exitTimer) window.clearTimeout(exitTimer);
+    };
+  }, []);
+
   return (
     <div className="selection:bg-brand-accent selection:text-white">
+      {showLoader && <PortfolioLoader isLeaving={isPortfolioReady} />}
       <WaveBackground />
       <Navbar activeSection={activeSection} onSectionChange={handleNavClick} />
 
