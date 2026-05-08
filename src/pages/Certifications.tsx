@@ -3,15 +3,20 @@ import { SectionWrapper, AnimatedItem } from '../components/shared';
 const Certifications = () => {
   const certs = [
     {
-      src: '/assets/certificates/CCNA%20cert.jpeg',
+      src: '/assets/certificates/CCNA.jpeg',
       title: 'CCNA certificate',
       text: 'Completed CCNAv7: Switching, Routing, and Wireless Essentials through the Cisco Networking Academy. Covers network configuration, switching operations, wireless LAN setup, and LAN security fundamentals.',
     },
     {
-      src: '/assets/certificates/CCNA%20badge.jpg',
-      title: 'CCNA badge',
-      text: 'Cisco-verified badge for completing the CCNA: Switching, Routing, and Wireless Essentials course. Demonstrated foundation in switching operations, wired and wireless LAN configuration, security best practices, and redundancy protocols. Completed 45 practice activities and 21 hours of hands-on labs using Cisco Packet Tracer.',
+      src: '/assets/certificates/AI Literacy.jpeg',
+      title: 'AI Literacy certificate',
+      text: 'Completed IBM\'s AI Literacy course on SkillsBuild, exploring real-world AI use cases across industries and practicing how to guide an AI assistant to solve hands-on business challenges. Builds the foundation to recognize, evaluate, and apply AI tools responsibly.',
     },
+    {
+      src: '/assets/certificates/CC Gen AI.jpeg',
+      title: 'IBM Customer Care in the Age of Gen AI',
+      text: 'Completed IBM\'s Introduction to Customer Care in the Age of Generative AI (DL19007G), covering how AI assistants, virtual agents, and chatbots powered by IBM watsonx can automate customer interactions and scale support operations — with a focus on responsible AI deployment.',
+    }
   ];
 
   return (
