@@ -431,6 +431,18 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
+/* Landing page: use a white bubble for the social icon surfaces */
+.hero-showcase .glass-icon-surface {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 0.7rem 1.8rem rgba(5, 18, 34, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.hero-showcase .glass-icon-surface::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), transparent 58%);
+}
+
 .glass-icon-link:focus-visible .glass-icon-surface {
   outline: 2px solid rgba(250, 226, 190, 0.9);
   outline-offset: 0.24rem;
