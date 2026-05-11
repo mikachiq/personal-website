@@ -40,7 +40,7 @@ const Education = () => {
     <SectionWrapper id="education" className="pt-16 md:pt-24">
       <div className="space-y-12">
         {education.map((edu, i) => (
-          <AnimatedItem key={i} className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+          <AnimatedItem key={i} itemKey={i} className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
             {edu.images.length > 0
               ? <EduImageCarousel images={edu.images} level={edu.level} positions={(edu as any).positions} />
               : <div className="aspect-square bg-brand-dark/30 rounded-3xl border border-white/5 flex items-center justify-center">

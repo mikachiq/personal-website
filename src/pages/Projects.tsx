@@ -19,13 +19,58 @@ type Project = {
   };
 };
 
+type ProjectTechIcon = {
+  icon: string;
+  invertOnLight?: boolean;
+  cropIcon?: 'openai' | 'deepseek';
+};
+
+const projectTechIcons: Record<string, ProjectTechIcon> = {
+  'Blender': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg' },
+  'C#': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg' },
+  'Docker': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+  'Figma': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+  // Godot & GDScript unified to the single token 'Godot / GDScript' below.
+
+
+  'Gemini API': { icon: 'https://cdn.simpleicons.org/googlegemini/8E75B2' },
+  'GraphHopper API': { icon: '/assets/icons/graphhopper.ico' },
+  'CSS': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+  'HTML': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+  // Split HTML & CSS so each token fits without overflowing tooltips.
+  // (icons can be different, but still readable as separate chips)
+  // (legacy) kept for any older data; prefer separate tokens in project stacks.
+  // 'HTML & CSS' legacy combined token (intentionally omitted)
+
+
+  'JavaScript': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+
+  'Mixamo': { icon: '/assets/icons/mixamo.ico' },
+  'n8n': { icon: 'https://cdn.simpleicons.org/n8n/EA4B71' },
+    'OpenRouter API': { icon: 'https://cdn.simpleicons.org/openrouter/FFFFFF', invertOnLight: true },
+
+  'PostgreSQL': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+  'Python': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  'Random Forest': { icon: '/assets/icons/random-forest.svg' },
+  'React': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+  'Sketchfab': { icon: 'https://cdn.simpleicons.org/sketchfab/1CAAD9' },
+  'Supabase': { icon: 'https://cdn.simpleicons.org/supabase/3ECF8E' },
+  'Trellis3D': { icon: '/assets/icons/trellis3d.ico' },
+  'Godot / GDScript': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg' },
+  'TypeScript': { icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+
+  'Vercel': { icon: 'https://cdn.simpleicons.org/vercel/FFFFFF', invertOnLight: true },
+};
+
 const projects: Project[] = [
   {
     title: 'MikaHub',
+
     role: 'Solo Developer & Designer',
     type: 'Personal Project',
     ongoing: true,
-    stack: ['React', 'HTML & CSS', 'Figma'],
+    stack: ['React', 'HTML', 'CSS', 'Figma'],
+
     highlights: [
       'Personal gaming portfolio',
       'Per-game builds & loadouts',
@@ -43,7 +88,7 @@ const projects: Project[] = [
     title: 'EDUMATCH: A Machine Learning-Based Recommendation System for Tertiary School Selection',
     role: 'Project Manager | Systems Architect and Designer',
     type: 'Capstone Project',
-    stack: ['TypeScript', 'C#', 'Python', 'React', 'PostgreSQL', 'Docker', 'External APIs', 'Random Forest'],
+    stack: ['TypeScript', 'C#', 'Python', 'React', 'PostgreSQL', 'Docker', 'Gemini API', 'GraphHopper API', 'Random Forest'],
     highlights: [
       'Random Forest model',
       'Real student data collection',
@@ -65,7 +110,8 @@ const projects: Project[] = [
     title: 'AIRA: An HR Automation System with AI Agent Integration',
     role: 'Lead & Full Stack Developer | Systems Architect',
     type: 'Company Internal System',
-    stack: ['React', 'TypeScript', 'Supabase', 'Openrouter API', 'Vercel'],
+    stack: ['React', 'TypeScript', 'HTML', 'CSS', 'Supabase', 'OpenRouter API', 'Vercel'],
+
     highlights: [
       'AI-powered email scanning',
       'Automated applicant extraction',
@@ -87,7 +133,8 @@ const projects: Project[] = [
     title: 'Graduation Curse',
     role: 'Game Designer | Lead Developer',
     type: 'Game Dev',
-    stack: ['Godot', 'GDScript', 'Blender', 'Sketchfab', 'Trellis3D', 'Mixamo'],
+    stack: ['Trellis3D', 'Godot / GDScript', 'Blender', 'Sketchfab', 'Mixamo'],
+
     highlights: [
       'Retro-inspired 3D horror-comedy',
       'Custom map layout & asset placement',
@@ -113,7 +160,7 @@ const projects: Project[] = [
     visitSite: 'https://lifewoodwebsite.vercel.app/',
     role: 'Lead & Fullstack Developer',
     type: 'Internship Project',
-    stack: ['React', 'TypeScript', 'Supabase', 'Vercel'],
+    stack: ['React', 'TypeScript', 'HTML', 'CSS', 'Supabase', 'Vercel'],
     highlights: [
       '3 admin role tiers',
       'HR automation system',
@@ -145,7 +192,7 @@ const projects: Project[] = [
     title: 'Adssistance: An automation email assistant agent',
     role: 'Lead Automation Developer',
     type: 'Personal Project',
-    stack: ['n8n', 'OpenRouter API', 'HTML & CSS', 'JavaScript'],
+    stack: ['n8n', 'OpenRouter API', 'HTML', 'CSS', 'JavaScript'],
     highlights: [
       'Automation email assistant for admins',
       'Generates context-aware AI replies',
@@ -184,7 +231,7 @@ const Projects = () => {
           const activeImageIndex = previewImages.length > 0 ? previewTick % previewImages.length : 0;
 
           return (
-            <AnimatedItem key={i} className="h-full">
+            <AnimatedItem key={i} itemKey={i} className="h-full">
               <button
                 onClick={() => setSelected(project)}
                 className="glass-card project-card flex h-80 w-full flex-col text-left transition-colors hover:border-brand-accent/40"
@@ -278,12 +325,7 @@ const Projects = () => {
                       <p className="text-label text-brand-muted">Stack & Tools</p>
                       <div className="flex flex-wrap gap-1.5">
                         {selected.stack.map((tech, j) => (
-                          <span
-                            key={j}
-                            className="rounded-full border border-brand-accent/30 bg-brand-accent/12 px-2.5 py-1 text-brand-accent text-chip"
-                          >
-                            {tech}
-                          </span>
+                          <ProjectStackToken key={`${selected.title}-${tech}-${j}`} tech={tech} />
                         ))}
                       </div>
                     </div>
@@ -338,6 +380,32 @@ const Projects = () => {
         )}
       </AnimatePresence>
     </SectionWrapper>
+  );
+};
+
+const ProjectStackToken = ({ tech }: { tech: string }) => {
+  const icon = projectTechIcons[tech];
+
+  if (!icon) {
+    return (
+      <span className="project-stack-token project-stack-token-text">
+        {tech}
+      </span>
+    );
+  }
+
+  return (
+    <span className="project-stack-token project-stack-token-icon" aria-label={tech} tabIndex={0}>
+      <img
+        src={icon.icon}
+        alt=""
+        className={`project-stack-icon ${icon.invertOnLight ? 'project-stack-icon-invert' : ''}`}
+        loading="lazy"
+        decoding="async"
+      />
+      <span className="project-stack-tooltip" aria-hidden="true">{tech}</span>
+      <span className="sr-only">{tech}</span>
+    </span>
   );
 };
 

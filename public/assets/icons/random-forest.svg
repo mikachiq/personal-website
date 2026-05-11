@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Random Forest</title>
+  <g fill="none" stroke="#1f2937" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5">
+    <path d="M32 10v10" />
+    <path d="M32 20 18 32" />
+    <path d="M32 20l14 12" />
+    <path d="M18 32 10 46" />
+    <path d="M18 32l8 14" />
+    <path d="M46 32 38 46" />
+    <path d="M46 32l8 14" />
+  </g>
+  <g fill="#f97316" stroke="#1f2937" stroke-width="2">
+    <circle cx="32" cy="10" r="5" />
+    <circle cx="18" cy="32" r="5" />
+    <circle cx="46" cy="32" r="5" />
+  </g>
+  <g fill="#38bdf8" stroke="#1f2937" stroke-width="2">
+    <circle cx="10" cy="46" r="5" />
+    <circle cx="26" cy="46" r="5" />
+    <circle cx="38" cy="46" r="5" />
+    <circle cx="54" cy="46" r="5" />
+  </g>
+</svg>

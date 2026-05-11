@@ -45,8 +45,8 @@ export const SectionWrapper = ({
   </motion.section>
 );
 
-export const AnimatedItem = ({ children, className, key }: { children: React.ReactNode; className?: string; key?: React.Key }) => (
-  <motion.div key={key} variants={itemVariants} className={className}>
+export const AnimatedItem = ({ children, className, itemKey }: { children: React.ReactNode; className?: string; itemKey?: React.Key }) => (
+  <motion.div key={itemKey} variants={itemVariants} className={className}>
     {children}
   </motion.div>
 );

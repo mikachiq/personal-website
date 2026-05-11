@@ -5,7 +5,7 @@ import { SectionWrapper, AnimatedItem } from '../components/shared';
 const funFacts: { label: string; image?: string; position?: string }[] = [
   { label: 'I used to do competitive speedcubing', image: '/assets/fun-facts/wca.jpg' },
   { label: 'I live an active lifestyle', image: '/assets/fun-facts/gym.jpg' },
-  { label: 'I have a collection of figurines', image: '/assets/fun-facts/collection.jpg' },
+  { label: "I'm a collector", image: '/assets/fun-facts/collection.jpg' },
   { label: 'I love animals', image: '/assets/fun-facts/cats.jpg' },
   { label: 'I do cosplay', image: '/assets/fun-facts/cosplay.jpg' },
 ];

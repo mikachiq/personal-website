@@ -59,7 +59,7 @@ const Experience = () => {
       </AnimatedItem>
       <div className="space-y-12">
         {experiences.map((exp, i) => (
-          <AnimatedItem key={i} className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <AnimatedItem key={i} itemKey={i} className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {(exp as any).images?.length
               ? <EduImageCarousel images={(exp as any).images} level={exp.title} positions={(exp as any).positions} />
               : <div className="aspect-square bg-brand-dark/30 rounded-3xl border border-white/5 flex items-center justify-center">
