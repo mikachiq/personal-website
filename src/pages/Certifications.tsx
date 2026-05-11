@@ -21,7 +21,7 @@ const Certifications = () => {
 
   return (
     <SectionWrapper id="certifications" className="pt-16 md:pt-24">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24 mt-8 md:mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 mt-8 md:mt-12">
         {certs.map((cert, i) => (
           <AnimatedItem key={i} className={`flex flex-col gap-6`}>
             <div className="glass-card p-4">

@@ -132,7 +132,7 @@ export default function App() {
 
       <main className="relative text-body pb-20 md:pb-28" style={{ paddingTop: 'var(--nav-height, 56px)' }}>
         <section id="home">
-          <LandingPage onNext={() => handleNavClick('about')} />
+          <LandingPage onNext={() => handleNavClick('about')} onViewProjects={() => handleNavClick('projects')} />
         </section>
         <section id="about">
           <AboutMe />

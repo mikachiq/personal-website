@@ -835,6 +835,10 @@
   @apply bg-brand-dark hover:bg-brand-dark/80 text-brand-cream px-8 py-4 rounded-2xl flex items-center gap-3 transition-all duration-300 shadow-lg relative overflow-hidden;
 }
 
+.btn-secondary-light {
+  @apply bg-brand-cream/92 hover:bg-brand-cream text-brand-dark px-8 py-4 rounded-2xl flex items-center gap-3 transition-all duration-300 shadow-lg border border-white/30;
+}
+
 .btn-accent-blob {
   @apply absolute -right-4 -bottom-4 w-32 h-32 bg-brand-accent rounded-full blur-2xl opacity-50 pointer-events-none;
 }

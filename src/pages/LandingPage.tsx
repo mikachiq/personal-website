@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, FolderOpen } from 'lucide-react';
 import { AnimatedItem, pageVariants } from '../components/shared';
 import { HomeProps } from '../types';
 import { useEffect, useState } from 'react';
@@ -66,7 +66,7 @@ const socialItems: GlassIconItem[] = [
   },
 ];
 
-const LandingPage = ({ onNext }: HomeProps) => (
+const LandingPage = ({ onNext, onViewProjects }: HomeProps) => (
   <motion.div
     variants={pageVariants}
     initial="initial"
@@ -89,7 +89,7 @@ const LandingPage = ({ onNext }: HomeProps) => (
         </p>
       </AnimatedItem>
 
-      <AnimatedItem className="w-full flex justify-center md:justify-start">
+      <AnimatedItem className="w-full flex flex-col sm:flex-row justify-center md:justify-start gap-3">
         <button
           onClick={onNext}
           className="btn-primary text-action group w-full sm:w-auto justify-center active:scale-[0.98] touch-manipulation"
@@ -97,6 +97,13 @@ const LandingPage = ({ onNext }: HomeProps) => (
           <ArrowRight className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 group-hover:translate-x-2 transition-transform" />
           Get to know me
           <div className="btn-accent-blob" />
+        </button>
+        <button
+          onClick={onViewProjects}
+          className="btn-secondary-light text-action group w-full sm:w-auto justify-center active:scale-[0.98] touch-manipulation"
+        >
+          <FolderOpen className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:-translate-y-0.5" />
+          View my works
         </button>
       </AnimatedItem>
 

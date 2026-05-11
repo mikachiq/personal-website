@@ -2,5 +2,6 @@ export type Section = 'home' | 'about' | 'education' | 'experience' | 'projects'
 
 export interface HomeProps {
   onNext: () => void;
+  onViewProjects: () => void;
   key?: string;
 }
